@@ -19,7 +19,7 @@
   "dependencies": {
       "angular": "~1.4.8",
       "angular-sanitize": "~1.4.8",
-      "openlayers": "https://github.com/openlayers/ol3/releases/download/v3.16.0/v3.16.0-dist.zip"
+      "openlayers": "3.16.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
