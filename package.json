@@ -19,7 +19,7 @@
   "dependencies": {
       "angular": "~1.4.8",
       "angular-sanitize": "~1.4.8",
-      "openlayers": "sathishatnet/ol3-compiled#v3.16.0"
+      "openlayers3": "sathishatnet/ol3-compiled#v3.16.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
