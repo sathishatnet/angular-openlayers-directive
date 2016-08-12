@@ -259,10 +259,10 @@ angular.module('openlayers-directive').factory('olHelpers', function($q, $log, $
                     attributions: createAttribution(source),
                     wrapX: (source.wrapX === undefined) ? 1 : source.wrapX
                 };
-                
+
                 if(source.projection){
                     wmsConfiguration.projection = new ol.proj.get(source.projection);
-                }                
+                }
 
                 if (source.serverType) {
                     wmsConfiguration.serverType = source.serverType;
@@ -410,7 +410,7 @@ angular.module('openlayers-directive').factory('olHelpers', function($q, $log, $
                 }
 
                 break;
-				case 'WKT':
+			case 'WKT':
                 if (!(source.wkt || source.url)) {
                     $log.error('[AngularJS - Openlayers] - You need a WKT ' +
                                'property to add a GeoJSON layer.');
@@ -424,13 +424,13 @@ angular.module('openlayers-directive').factory('olHelpers', function($q, $log, $
                     });
                 } else {
                     oSource = new ol.source.Vector();
-                    var featureProjection =  projection;       
+                    var featureProjection =  projection;
                     var wktProjection;
                     if (isDefined(source.wkt.projection)) {
                         wktProjection = new ol.proj.get(source.wkt.projection);
                     }
                     else{
-                     wktProjection = projection;   
+                     wktProjection = projection;
                     }
 
                     var wktFormat = new ol.format.WKT();
@@ -554,7 +554,7 @@ angular.module('openlayers-directive').factory('olHelpers', function($q, $log, $
                         origin: source.tileGrid.origin, // top left corner of the pixel projection's extent
                         resolutions: source.tileGrid.resolutions
                     }),
-                    tileUrlFunction: function(tileCoord/*, pixelRatio, projection*/) {
+                    tileUrlFunction: source.tileUrlFunction? source.tileUrlFunction: function(tileCoord/*, pixelRatio, projection*/) {
                         var z = tileCoord[0];
                         var x = tileCoord[1];
                         var y = -tileCoord[2] - 1;
