@@ -1,7 +1,7 @@
 (function (root, factory) {
     if (typeof require === 'function' && typeof exports === 'object') {
         // CommonJS
-        var ol = require('openlayers3');
+        var ol = require('ol3-compiled');
         var ngSanitize = require('angular-sanitize');
         exports.angularOpenlayersDirective = factory(ol);
     } else if (typeof define === 'function' && define.amd) {
