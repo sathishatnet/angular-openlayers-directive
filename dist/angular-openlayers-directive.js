@@ -1725,6 +1725,7 @@ angular.module('openlayers-directive').factory('olHelpers', ["$q", "$log", "$htt
                     });
                 } else {
                     oSource = new ol.source.Vector();
+                    oSource.wrapX = source.wrapX !== undefined ? source.wrapX : true
                     var featureProjection =  projection;
                     var wktProjection;
                     if (isDefined(source.wkt.projection)) {
