@@ -131,7 +131,14 @@ angular.module('openlayers-directive', ['ngSanitize']).directive('openlayers', [
                 // Resolve the map object to the promises
                 scope.setMap(map);
                 olData.setMap(map, attrs.id);
-
+                
+                scope.$on("$destroy", function() {
+                    if (attrs.id) {
+                        olData.resetMap(attrs.id);
+                    }
+                    map.setTarget(null);
+                    map = null;
+                });
             }
         };
     }]);
